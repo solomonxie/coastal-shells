@@ -3,6 +3,21 @@
 # Owner: Solomon Xie
 # Email: 14041622+solomonxie@users.noreply.github.com
 # Enviroment: Ubuntu / Raspbian / MacOS Sierra
+# Run:
+#   $ install_zsh.sh "Mac OS X"
+
+do_init_by_os(){
+    # Get Distro from option passed to the script
+    distro=$1
+    case distro in
+        "darwin" | "Mac OS X")
+            do_install_zsh_mac ;;
+        "ubuntu")
+            do_install_zsh_ubuntu ;;
+        "raspbian")
+            do_install_zsh_rpi ;;
+    esac
+}
 
 
 do_install_zsh_rpi(){
