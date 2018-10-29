@@ -1,7 +1,11 @@
+#! /bin/bash 
+#
 # Owner: Solomon Xie
 # Email: 14041622+solomonxie@users.noreply.github.com
 # Enviroment: Ubuntu
 #
+
+set -x
 
 # ---SETING UP ZSH ---
 echo "-----[  START SETTING UP ZSH   ]-----"
