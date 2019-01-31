@@ -1,4 +1,4 @@
-#! /bin/bash 
+#! /usr/bin/env bash
 #
 # MAINTAINER: Solomon Xie <14041622+solomonxie@users.noreply.github.com>
 # Enviroment: Ubuntu / Raspbian / MacOS Sierra
