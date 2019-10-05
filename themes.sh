@@ -1,5 +1,13 @@
-# Owner: Solomon Xie
-# Email: 14041622+solomonxie@users.noreply.github.com
+########################################################
+#         _____ _                                      #
+#        |_   _| |__   ___ _ __ ___   ___  ___         #
+#          | | | '_ \ / _ \ '_ ` _ \ / _ \/ __|        #
+#          | | | | | |  __/ | | | | |  __/\__ \        #
+#          |_| |_| |_|\___|_| |_| |_|\___||___/        #
+#                                                      #
+########################################################
+#
+# MAINTAINER: Solomon Xie <14041622+solomonxie@users.noreply.github.com>
 
 # [General UI Settings] {
     # colorful `ls`
