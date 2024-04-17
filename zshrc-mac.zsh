@@ -132,7 +132,7 @@ export PATH="$HOME/virtualenv/venv/bin:$PATH"
 # =====NODE.JS=====
 # export PATH="/usr/local/opt/node@10/bin:$PATH"
 # export PATH="$HOME/.nvm/versions/node/v10.17.0/bin:$PATH"
-export PATH="$HOME/virtualnode/venv/bin/:$PATH"
+# export PATH="$HOME/virtualnode/venv/bin/:$PATH"
 # export PATH="$HOME/virtualnode/venv10/bin/:$PATH"
 # export PATH="$HOME/virtualnode/venv16/bin/:$PATH"
 # ======Java============
@@ -164,8 +164,9 @@ export WEZTERM_CONFIG_DIR="${HOME}/.config/wezterm"
 export WEZTERM_CONFIG_FILE="${HOME}/.config/wezterm/wezterm.lua"
 
 # Clang for building packages (requires brew install openssl)
-export LDFLAGS="-L/usr/local/opt/openssl@3/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@3/include"
+# export LDFLAGS="-L/usr/local/opt/openssl@3/lib"
+# export CPPFLAGS="-I/usr/local/opt/openssl@3/include"
+# ^ DO NOT ENALBE THESE IN PERSISTENT DOTFILES, WILL CAUSE SOME OTHER BUILDING FAILURES
 
 # =========Neovim==============
 export PATH="$HOME/nvim-macos/bin:$PATH"
@@ -175,3 +176,4 @@ source ~/myconf/dotfiles/zsh/zsh-envfiles.sh
 
 # BETTER TO BE AT THE BOTTOM
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
