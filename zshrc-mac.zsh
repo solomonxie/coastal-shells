@@ -90,7 +90,7 @@ export TZ_LIST="Asia/Shanghai,Beijing-Office;US/Pacific, US-Office"
 # Some would be imported here by other programms automatically
 # etc., cat 'expot path=...' > ~/.zshrc
 
-# IMPORTANT!!
+# LOCAL LANGUAGE:
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
@@ -130,11 +130,11 @@ export PATH="/usr/local/opt/python@3.7/bin:$PATH"
 export PATH="/usr/local/opt/python@3/bin:$PATH"
 export PATH="$HOME/virtualenv/venv/bin:$PATH"
 # =====NODE.JS=====
-# export PATH="/usr/local/opt/node@10/bin:$PATH"
-# export PATH="$HOME/.nvm/versions/node/v10.17.0/bin:$PATH"
-# export PATH="$HOME/virtualnode/venv/bin/:$PATH"
-# export PATH="$HOME/virtualnode/venv10/bin/:$PATH"
-# export PATH="$HOME/virtualnode/venv16/bin/:$PATH"
+export PATH="/usr/local/opt/node@10/bin:$PATH"
+export PATH="$HOME/.nvm/versions/node/v10.17.0/bin:$PATH"
+export PATH="$HOME/virtualnode/venv/bin/:$PATH"
+export PATH="$HOME/virtualnode/venv10/bin/:$PATH"
+export PATH="$HOME/virtualnode/venv16/bin/:$PATH"
 # ======Java============
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home"
 # export JAVA_HOME=$(/usr/libexec/java_home)
@@ -146,7 +146,7 @@ export PATH="$HOME/workspace/bin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 # =====GOOGLE CLOUD===============
 export PATH="$HOME/local/share/google-cloud-sdk/bin:$PATH"
-export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/gcp-service-account-serverless-admin-f50d0f01265f.json"
+# export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/gcp-service-account-serverless-admin-f50d0f01265f.json"
 # ===========Clang=================
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 
@@ -172,8 +172,8 @@ export WEZTERM_CONFIG_FILE="${HOME}/.config/wezterm/wezterm.lua"
 export PATH="$HOME/nvim-macos/bin:$PATH"
 
 # =========PROJECT-LEVEL-OVERRIDE===========
-source ~/myconf/dotfiles/zsh/zsh-envfiles.sh
+source ~/myconf/dotfiles/zsh/zsh-envutils.sh
 
 # BETTER TO BE AT THE BOTTOM
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
+# [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh  # will mess up Vim environment

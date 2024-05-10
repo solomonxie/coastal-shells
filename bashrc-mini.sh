@@ -124,6 +124,7 @@ alias diff=vimdiff
 
 alias gitrc="vim ~/.gitconfig"
 alias vir="source .git/venv/bin/activate"
+alias py="PYTHONPATH=. python"
 
 
 #######################################################################

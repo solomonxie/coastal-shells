@@ -198,8 +198,9 @@ slug() {
 sed_all() {
     # For your reference only:
     for f in $(fd .py); do
-        sed -i '/matched_word_of_line/ c\ a_whole_new_line/'
-        sed -i 's/old_word/new_word/'
+        sed -i.bak '/matched_word_of_line/ c\ a_whole_new_line/'  # replace a line
+        sed -i.bak '/matched_word_of_line/d'  # Delete a line
+        sed -i.bak 's/old_word/new_word/'  # Replace a word
     done
 }
 
