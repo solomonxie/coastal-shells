@@ -24,6 +24,11 @@ kgrep() {
 }
 alias pskill=kgrep
 
+kill_bg() {
+    # Kill current background jobs
+    jobs -l |cut -d' ' -f4|xargs kill -9
+}
+
 port2proc() {
     local port
     port=$1
@@ -276,6 +281,21 @@ preview_file() {
     else
         echo TODO...
     fi
+}
+
+s3_logs_parser() {
+    local fpath="$1"
+    awk '
+    {
+      # Assign variables to specific fields
+      timestamp = substr($3, 2, length($3) - 2)
+      ip_address = $5
+      request_type = $9
+      request_uri = $11
+      status_code = $12
+      # Print the extracted fields
+      printf "\n\tTimestamp: %s, \n\tIP Address: %s, \n\tRequest Type: %s, \n\tRequest URI: %s, \n\tStatus Code: %s\n\n\n", timestamp, ip_address, request_type, request_uri, status_code
+    }' "$fpath"
 }
 
 # debug_launcher() {
