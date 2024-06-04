@@ -152,6 +152,8 @@ export PATH="$HOME/local/share/google-cloud-sdk/bin:$PATH"
 # export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/gcp-service-account-serverless-admin-f50d0f01265f.json"
 # ===========Clang=================
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
+# ===========Other programs=================
+export PATH="/opt/homebrew/opt/rabbitmq/sbin:$PATH"
 
 # =====MISC===============
 export HOMEBREW_NO_AUTO_UPDATE=1

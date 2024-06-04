@@ -24,7 +24,7 @@ kgrep() {
 }
 alias pskill=kgrep
 
-kill_bg() {
+killbg() {
     # Kill current background jobs
     jobs -l |cut -d' ' -f4|xargs kill -9
 }
