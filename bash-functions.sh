@@ -24,6 +24,10 @@ kgrep() {
 }
 alias pskill=kgrep
 
+killbg() {
+    jobs -l |cut -d " " -f4|xargs kill -9
+}
+
 port2proc() {
     local port
     port=$1
