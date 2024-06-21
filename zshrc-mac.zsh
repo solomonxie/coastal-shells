@@ -37,7 +37,7 @@ source ~/myconf/dotfiles/zsh/pluginconfigs/git-prompt.sh  # BLAZING FAST!!
 
 source ~/myconf/dotfiles/zsh/bash-alias.sh
 source ~/myconf/dotfiles/zsh/bash-functions.sh
-[[ -e ~/.bashrc-local.sh ]] && source ~/.bashrc-local.sh ||true
+[[ -e ~/.config/bashrc-local.sh ]] && source ~/.config/bashrc-local.sh ||true
 
 # alias alias=:  # Avoid override by other installations
 
@@ -132,9 +132,13 @@ export PATH="$HOME/virtualenv/venv/bin:$PATH"
 # =====NODE.JS=====
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="$HOME/.nvm/versions/node/v10.17.0/bin:$PATH"
-export PATH="$HOME/virtualnode/venv/bin:$PATH"
 export PATH="$HOME/virtualnode/venv10/bin:$PATH"
 export PATH="$HOME/virtualnode/venv16/bin:$PATH"
+export PATH="$HOME/virtualnode/venv20/bin:$PATH"
+export PATH="$HOME/virtualnode/venv/bin:$PATH"
+# =====Ruby=====
+export PATH="$HOME/.rbenv/versions/3.3.0/bin:$PATH"
+export PATH="$HOME/.rbenv/versions/2.7.6/bin:$PATH"
 # ======Java============
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home"
 # export JAVA_HOME=$(/usr/libexec/java_home)
