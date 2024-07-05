@@ -6,10 +6,10 @@ export HISTFILE=~/.bash_history
 export HISTSIZE=50000
 export SAVEHIST=10000
 export HISTTIMEFORMAT=''  # '%F %T: '
-setopt appendhistory
-setopt extendedhistory
-setopt sharehistory
-setopt incappendhistory
+#setopt appendhistory
+#setopt extendedhistory
+#setopt sharehistory
+#setopt incappendhistory
 
 #######################################################################
 #                        ENVIRONMENT VARIABLES                        #
@@ -161,18 +161,18 @@ _inject_envfile() {
         echo "injected env: ${fpath}"
     fi
 }
-chpwd() {
-    #!!! OVERRIDE ZSH BUILT-IN FUNCTION, WILL BE EXECUTED AT EVERY DIR CHANGE===>
-    _inject_envfile envfile
-    _inject_envfile envfile-local
-}
-_execute_at_initial_dir() {
-    _inject_envfile envfile
-    _inject_envfile envfile-local
-}
-_execute_at_initial_dir  # EXECUTE AT BEGINNING OF SHELL
+#chpwd() {
+#    #!!! OVERRIDE ZSH BUILT-IN FUNCTION, WILL BE EXECUTED AT EVERY DIR CHANGE===>
+#    _inject_envfile envfile
+#    _inject_envfile envfile-local
+#}
+#_execute_at_initial_dir() {
+#    _inject_envfile envfile
+#    _inject_envfile envfile-local
+#}
+#_execute_at_initial_dir  # EXECUTE AT BEGINNING OF SHELL
 #!!! OVERRIDE ZSH BUILT-IN COMMAND, WILL BE EXECUTED AT EVERY DIR CHANGE===>
-cd () { builtin cd "$@" && chpwd; }
+#cd () { builtin cd "$@" && chpwd; }
 
 
 # # ========DELETE WORD BACKWARDS BY CTRL-W============

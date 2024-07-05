@@ -37,7 +37,7 @@ source ~/myconf/dotfiles/zsh/pluginconfigs/git-prompt.sh  # BLAZING FAST!!
 
 source ~/myconf/dotfiles/zsh/bash-alias.sh
 source ~/myconf/dotfiles/zsh/bash-functions.sh
-[[ -e ~/.config/bashrc-local.sh ]] && source ~/.config/bashrc-local.sh ||true
+[[ -e ~/.bashrc-local ]] && source ~/.bashrc-local ||true
 
 # alias alias=:  # Avoid override by other installations
 
