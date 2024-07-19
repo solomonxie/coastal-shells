@@ -123,7 +123,7 @@ alias gcl="git clone"
 alias diff=vimdiff
 
 alias gitrc="vim ~/.gitconfig"
-alias vir="source .git/venv/bin/activate"
+alias vir="[ -e .git ] && source .git/venv/bin/activate || source venv/bin/activate"
 alias py="PYTHONPATH=. python"
 
 
