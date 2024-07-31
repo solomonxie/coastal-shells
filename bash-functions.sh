@@ -28,6 +28,11 @@ killbg() {
     jobs -l |cut -d " " -f4|xargs kill -9
 }
 
+killport() {
+    port=$1
+    lsof -ti :$port |xargs kill -9
+}
+
 port2proc() {
     local port
     port=$1
