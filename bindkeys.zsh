@@ -11,8 +11,9 @@ bindkey "^[[1;5D" backward-word  # ctrl-left
 bindkey "^[[1;5C" forward-word  # ctrl-right
 bindkey "^A" vi-beginning-of-line
 bindkey "^e" vi-end-of-line
+bindkey "^o" edit-command-line
 bindkey "^k" backward-kill-line
-# Conflict with fzf ---> (Allow ctrl-a ctrl-e to jump to the head/tail of the line)
+# ^Conflict with fzf ---> (Allow ctrl-a ctrl-e to jump to the head/tail of the line)
 # bindkey -e
 
 # Ctrl-x Ctrl-e to edit command in editor

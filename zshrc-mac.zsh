@@ -181,3 +181,7 @@ source ~/myconf/dotfiles/zsh/zsh-envutils.sh
 # BETTER TO BE AT THE BOTTOM
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh  # will mess up Vim environment
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/solomonxie/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
