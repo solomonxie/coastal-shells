@@ -120,13 +120,13 @@ alias gitbook='docker run -it --name gitbook --rm -v "$PWD":/gitbook -p 4000:400
 alias ju="~/virtualenv/conda/bin/jupyter notebook"
 alias ipy="ipython"
 alias py="PYTHONPATH=. python"
-alias pt="PYTHONPATH=. pytest"
+alias pt="PYTHONPATH=. pytest -svra"
 alias virpy="PYTHONPATH=. .git/venv/bin/python"
 alias webdav="python3 -m http.server 7000"
 alias ipdb="python3 ~/myconf/dotfiles/python/ipdb_debugger.py"
 alias pudb="python3 ~/myconf/dotfiles/python/pudb_debugger.py"
 alias load="python3 ~/myconf/dotfiles/python/read_data.py"
-alias vir="[ -e .git ] && source .git/venv/bin/activate || source venv/bin/activate"
+alias vir="[ -e .git/venv ] && source .git/venv/bin/activate || source venv/bin/activate"
 
 #######################################################################
 #                          MAC APPLICATIONS                           #
