@@ -146,6 +146,10 @@ kgrep() {
 }
 alias pskill=kgrep
 
+killbg() {
+    jobs -l |cut -d " " -f4|xargs kill -9
+}
+
 port2proc() {
     port=$1
     lsof -i :$port |awk '{print $2}' |tail -n +2
