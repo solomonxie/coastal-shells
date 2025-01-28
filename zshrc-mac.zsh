@@ -129,6 +129,7 @@ export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 export PATH="/usr/local/opt/python@3.7/bin:$PATH"
 export PATH="/usr/local/opt/python@3/bin:$PATH"
 export PATH="$HOME/virtualenv/venv/bin:$PATH"
+export PATH="$HOME/virtualenv/venv3_12/bin:$PATH"
 # =====NODE.JS=====
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="$HOME/.nvm/versions/node/v10.17.0/bin:$PATH"
@@ -172,7 +173,10 @@ export WEZTERM_CONFIG_FILE="${HOME}/.config/wezterm/wezterm.lua"
 # ^ DO NOT ENALBE THESE IN PERSISTENT DOTFILES, WILL CAUSE SOME OTHER BUILDING FAILURES
 
 # =========Neovim==============
-export PATH="$HOME/nvim-macos/bin:$PATH"
+export PATH="$HOME/nvim-macos-0.10.3/bin:$PATH"
+export PATH="$HOME/nvim-macos-0.10/bin:$PATH"
+export PATH="$HOME/nvim-macos-0.9/bin:$PATH"
+export PATH="$HOME/nvim-macos-0.9.5/bin:$PATH"
 
 # =========PROJECT-LEVEL-OVERRIDE===========
 source ~/myconf/dotfiles/zsh/zsh-envutils.sh
