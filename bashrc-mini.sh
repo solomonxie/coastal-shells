@@ -184,7 +184,3 @@ _inject_envfile() {
 # bind '\C-w:unix-filename-rubout'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/solomonxie/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
