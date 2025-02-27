@@ -6,6 +6,7 @@ export HISTFILE=~/.bash_history
 export HISTSIZE=50000
 export SAVEHIST=10000
 export HISTTIMEFORMAT=''  # '%F %T: '
+export PROMPT_COMMAND="history -a; $PROMPT_COMMAND"  # Save history right after executing
 #setopt appendhistory
 #setopt extendedhistory
 #setopt sharehistory

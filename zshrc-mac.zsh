@@ -113,6 +113,7 @@ export LUA_PATH="$HOME/myconf/dotfiles/lua/lib/?.lua;$LUA_PATH"
 export LUA_CPATH='/opt/homebrew/lib/lua/5.4/?.so;/opt/homebrew/lib/lua/5.4/loadall.so;./?.so;~/.luarocks/lib/lua/5.4/?.so'
 export PATH="$HOME/.luarocks/bin:$PATH"
 # =========LOCALBIN=========
+export PATH="/usr/bin:/usr/local/bin:/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
