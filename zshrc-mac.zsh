@@ -140,6 +140,7 @@ export PATH="$HOME/virtualnode/venv20/bin:$PATH"
 export PATH="$HOME/virtualnode/venv/bin:$PATH"
 # =====Ruby=====
 export PATH="$HOME/.rbenv/versions/3.3.0/bin:$PATH"
+export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 # ======Java============
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home"
 # export JAVA_HOME=$(/usr/libexec/java_home)
