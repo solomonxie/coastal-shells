@@ -123,6 +123,9 @@ export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
+# =====Ruby=====
+# export PATH="$HOME/.rbenv/versions/3.3.0/bin:$PATH"
+export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 # =====PYTHON=====
 export PATH="/usr/local/opt/python@2/bin:$PATH"
 export PATH="$HOME/virtualenv/venv2/bin:$PATH"
@@ -130,7 +133,7 @@ export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 export PATH="/usr/local/opt/python@3.7/bin:$PATH"
 export PATH="/usr/local/opt/python@3/bin:$PATH"
 export PATH="$HOME/virtualenv/venv/bin:$PATH"
-export PATH="$HOME/virtualenv/venv3_12/bin:$PATH"
+# export PATH="$HOME/virtualenv/venv3_12/bin:$PATH"
 # =====NODE.JS=====
 export PATH="/usr/local/opt/node@10/bin:$PATH"
 export PATH="$HOME/.nvm/versions/node/v10.17.0/bin:$PATH"
@@ -138,9 +141,6 @@ export PATH="$HOME/virtualnode/venv10/bin:$PATH"
 export PATH="$HOME/virtualnode/venv16/bin:$PATH"
 export PATH="$HOME/virtualnode/venv20/bin:$PATH"
 export PATH="$HOME/virtualnode/venv/bin:$PATH"
-# =====Ruby=====
-export PATH="$HOME/.rbenv/versions/3.3.0/bin:$PATH"
-export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 # ======Java============
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home"
 # export JAVA_HOME=$(/usr/libexec/java_home)
