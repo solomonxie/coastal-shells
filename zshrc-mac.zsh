@@ -125,7 +125,7 @@ export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
 # =====Ruby=====
 # export PATH="$HOME/.rbenv/versions/3.3.0/bin:$PATH"
-export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
+# export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
 # =====PYTHON=====
 export PATH="/usr/local/opt/python@2/bin:$PATH"
 export PATH="$HOME/virtualenv/venv2/bin:$PATH"
@@ -179,6 +179,7 @@ export PATH="$HOME/nvim-macos-0.10.3/bin:$PATH"
 export PATH="$HOME/nvim-macos-0.10/bin:$PATH"
 export PATH="$HOME/nvim-macos-0.9/bin:$PATH"
 export PATH="$HOME/nvim-macos-0.9.5/bin:$PATH"
+export PATH="$HOME/nvim-macos-0.11.2/bin:$PATH"
 
 # =========PROJECT-LEVEL-OVERRIDE===========
 source ~/myconf/dotfiles/zsh/zsh-envutils.sh
