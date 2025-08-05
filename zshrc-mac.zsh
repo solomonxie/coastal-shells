@@ -172,14 +172,16 @@ export WEZTERM_CONFIG_FILE="${HOME}/.config/wezterm/wezterm.lua"
 # Clang for building packages (requires brew install openssl)
 # export LDFLAGS="-L/usr/local/opt/openssl@3/lib"
 # export CPPFLAGS="-I/usr/local/opt/openssl@3/include"
-# ^ DO NOT ENALBE THESE IN PERSISTENT DOTFILES, WILL CAUSE SOME OTHER BUILDING FAILURES
+# export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+# export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
+# ^ NOTE: DO NOT ENALBE THESE IN PERSISTENT DOTFILES, WILL CAUSE SOME OTHER BUILDING FAILURES
 
 # =========Neovim==============
 export PATH="$HOME/nvim-macos-0.10.3/bin:$PATH"
 export PATH="$HOME/nvim-macos-0.10/bin:$PATH"
-export PATH="$HOME/nvim-macos-0.9/bin:$PATH"
-export PATH="$HOME/nvim-macos-0.9.5/bin:$PATH"
+export PATH="$HOME/nvim-macos-0.9.5/bin:$PATH"  # After nvim 0.10.+, Ctrl-O can't jump back (buffer removed from jumplist) (REF: issues/28968)
 export PATH="$HOME/nvim-macos-0.11.2/bin:$PATH"
+export VIMRUNTIME="$HOME/nvim-macos-0.11.2/share/nvim/runtime"
 
 # =========PROJECT-LEVEL-OVERRIDE===========
 source ~/myconf/dotfiles/zsh/zsh-envutils.sh
