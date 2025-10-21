@@ -157,15 +157,19 @@ export PATH="$HOME/local/share/google-cloud-sdk/bin:$PATH"
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 
 # =====MISC===============
-export HOMEBREW_NO_AUTO_UPDATE=1
 export MANPATH="/usr/local/opt/findutils/libexec/gnuman:$MANPATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+
+export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_PREFIX="/opt/homebrew";
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+
+export TMUX_PLUGIN_MANAGER_PATH='~/.tmux/plugins'
+
 export WEZTERM_CONFIG_DIR="${HOME}/.config/wezterm"
 export WEZTERM_CONFIG_FILE="${HOME}/.config/wezterm/wezterm.lua"
 
@@ -180,8 +184,8 @@ export WEZTERM_CONFIG_FILE="${HOME}/.config/wezterm/wezterm.lua"
 export PATH="$HOME/nvim-macos-0.10.3/bin:$PATH"
 export PATH="$HOME/nvim-macos-0.10/bin:$PATH"
 export PATH="$HOME/nvim-macos-0.9.5/bin:$PATH"  # After nvim 0.10.+, Ctrl-O can't jump back (buffer removed from jumplist) (REF: issues/28968)
-export PATH="$HOME/nvim-macos-0.11.2/bin:$PATH"
-export VIMRUNTIME="$HOME/nvim-macos-0.11.2/share/nvim/runtime"
+export PATH="$HOME/nvim-macos-0.11.4/bin:$PATH"
+export VIMRUNTIME="$HOME/nvim-macos-0.11.4/share/nvim/runtime"
 
 # =========PROJECT-LEVEL-OVERRIDE===========
 source ~/myconf/dotfiles/zsh/zsh-envutils.sh
