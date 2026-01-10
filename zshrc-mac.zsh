@@ -189,6 +189,7 @@ export VIMRUNTIME="$HOME/nvim-macos-0.11.2/share/nvim/runtime"
 
 # =========PROJECT-LEVEL-OVERRIDE===========
 source ~/myconf/dotfiles/zsh/zsh-envutils.sh
+source ~/.global.env 2>&1 >> /dev/null
 
 # BETTER TO BE AT THE BOTTOM
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
