@@ -37,6 +37,7 @@ source ~/myconf/dotfiles/zsh/pluginconfigs/git-prompt.sh  # BLAZING FAST!!
 
 source ~/myconf/dotfiles/zsh/bash-alias.sh
 source ~/myconf/dotfiles/zsh/bash-functions.sh
+source ~/myconf/dotfiles/zsh/zsh-envutils.sh
 
 # alias alias=:  # Avoid override by other installations
 
@@ -186,16 +187,12 @@ export PATH="$HOME/nvim-macos-0.9.5/bin:$PATH"  # After nvim 0.10.+, Ctrl-O can'
 export PATH="$HOME/nvim-macos-0.11.2/bin:$PATH"
 export VIMRUNTIME="$HOME/nvim-macos-0.11.2/share/nvim/runtime"
 
-[[ -e ~/.bashrc-local ]] && source ~/.bashrc-local ||true
-
-# =========PROJECT-LEVEL-OVERRIDE===========
-source ~/myconf/dotfiles/zsh/zsh-envutils.sh
+# =========OVERRIDES===========
+# Machine-wise overrides
+touch ~/.bashrc-local && source ~/.bashrc-local ||true
+# Project-wise overrides
 touch ~/.global.env && source ~/.global.env 2>&1 >> /dev/null
 
 # BETTER TO BE AT THE BOTTOM
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh  # will mess up Vim environment
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/solomonxie/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
