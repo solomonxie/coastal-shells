@@ -196,3 +196,7 @@ touch ~/.global.env && source ~/.global.env 2>&1 >> /dev/null
 # BETTER TO BE AT THE BOTTOM
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh  # will mess up Vim environment
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/solomonxie/.local/bin:$PATH"
