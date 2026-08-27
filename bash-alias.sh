@@ -39,9 +39,9 @@ alias .....='cd ../../../../'
 
 alias SO="source ~/.zshrc"
 
-alias fg1="fg %1"
-alias fg2="fg %2"
-alias fg3="fg %3"
+alias f1="fg %1"
+alias f2="fg %2"
+alias f3="fg %3"
 
 
 #######################################################################
