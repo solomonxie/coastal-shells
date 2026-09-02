@@ -194,7 +194,7 @@ touch ~/.bashrc-local && source ~/.bashrc-local ||true
 touch ~/.global.env && source ~/.global.env 2>&1 >> /dev/null
 
 # BETTER TO BE AT THE BOTTOM
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 2>/dev/null  # silences benign "can't change option: zle" from fzf's option save/restore
 # [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh  # will mess up Vim environment
 
 

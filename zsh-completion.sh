@@ -3,7 +3,20 @@
 #   1. TRY TO REMOVE ALL CACHE: `$ rm ~/.zcompdump*`
 #   2. CHECK ENV: `$ echo $FPATH`
 
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+# Only run the full compaudit security check once per day; skip it (-C) otherwise.
+# (#q...) glob qualifiers need EXTENDED_GLOB, which is off by default here,
+# so scope it locally rather than flipping it for the whole shell.
+# REF: https://gist.github.com/ctechols/ca1035271ad134841284
+() {
+    setopt local_options extended_glob
+    local dump="${ZDOTDIR:-$HOME}/.zcompdump"
+    if [[ -n "$dump"(#qN.mh+24) ]]; then
+        compinit
+    else
+        compinit -C
+    fi
+}
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # builtin completion [case insensitive]
 zstyle ':completion:*' menu select # select completions with arrow keys
