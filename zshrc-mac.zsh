@@ -189,9 +189,11 @@ export VIMRUNTIME="$HOME/nvim-macos-0.11.2/share/nvim/runtime"
 
 # =========OVERRIDES===========
 # Machine-wise overrides
-touch ~/.bashrc-local && source ~/.bashrc-local ||true
+[ -f ~/.bashrc-local ] || touch ~/.bashrc-local
+source ~/.bashrc-local || true
 # Project-wise overrides
-touch ~/.global.env && source ~/.global.env 2>&1 >> /dev/null
+[ -f ~/.global.env ] || touch ~/.global.env
+source ~/.global.env >>/dev/null 2>&1
 
 # BETTER TO BE AT THE BOTTOM
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 2>/dev/null  # silences benign "can't change option: zle" from fzf's option save/restore
