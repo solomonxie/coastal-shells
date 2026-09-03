@@ -35,7 +35,16 @@ ZSH_THEME_GIT_PROMPT_TAG="%{$fg_bold[magenta]%}"
 _ZSH_FULL_DIR='%'
 _ZSH_CURRENT_DIR='%.'
 _ZSH_COMMAND_PREFIX='>>'  # ❯ | $|> | » | >>
+
+# venv's own activate script double-parens PS1 (e.g. "((venv) )") on
+# Python 3.12+, since it already wraps VIRTUAL_ENV_PROMPT in parens itself.
+# Disable its PS1 edit and show our own single-paren segment instead.
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+venvprompt() {
+    [ -n "$VIRTUAL_ENV" ] && echo "(${VIRTUAL_ENV:t}) "
+}
+
 # PROMPT='%B%40<..<%~%b$(gitprompt)'
-PROMPT='%{$fg_bold[cyan]%}${_ZSH_CURRENT_DIR}%b%F{white}$(gitprompt) '
+PROMPT='%F{yellow}$(venvprompt)%{$fg_bold[cyan]%}${_ZSH_CURRENT_DIR}%b%F{white}$(gitprompt) '
 PROMPT+='%(?.%(!.%F{white}❯%F{yellow}❯%F{red}.%F{green})${_ZSH_COMMAND_PREFIX}%f.%F{red}${_ZSH_COMMAND_PREFIX}%f) '
 RPROMPT=''
