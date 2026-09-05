@@ -185,7 +185,6 @@ export PATH="$HOME/nvim-macos-0.10.3/bin:$PATH"
 export PATH="$HOME/nvim-macos-0.10/bin:$PATH"
 export PATH="$HOME/nvim-macos-0.9.5/bin:$PATH"  # After nvim 0.10.+, Ctrl-O can't jump back (buffer removed from jumplist) (REF: issues/28968)
 export PATH="$HOME/nvim-macos-0.11.2/bin:$PATH"
-export VIMRUNTIME="$HOME/nvim-macos-0.11.2/share/nvim/runtime"
 
 # =========OVERRIDES===========
 # Machine-wise overrides
