@@ -44,23 +44,3 @@ select-word-style bash
 # $ zle -al
 #   .accept-and-hold
 # ...
-
-# Send the current tmux pane context to the AI pane above.
-send_tmux_context_to_ai() {
-    if [[ -z "$TMUX" ]]; then
-        zle -M 'Not inside tmux'
-        return 0
-    fi
-
-    local context
-    context=$(tmux display-message -p -t "${TMUX_PANE:-}" \
-        'Context: session=#S window=#I pane=#P pane_id=#{pane_id} title=#{pane_title} path=#{pane_current_path} command=#{pane_current_command}') || {
-        zle -M 'Unable to read tmux pane context'
-        return 0
-    }
-
-    tmux send-keys -t '{up-of}' -l "$context" && tmux select-pane -t '{up-of}'
-    zle reset-prompt
-}
-zle -N send_tmux_context_to_ai
-bindkey '^I' send_tmux_context_to_ai
