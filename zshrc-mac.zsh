@@ -13,7 +13,7 @@
 #######################################################################
 # if [[ "$0" =~ "zsh" ]]; then  # >>> PLUGINS >>>
 source ~/myconf/dotfiles/zsh/zsh-performance.sh
-source ~/myconf/dotfiles/zsh/bindkeys.zsh
+source ~/myconf/dotfiles/zsh/zsh-bindkeys.zsh
 source ~/myconf/dotfiles/zsh/zsh-completion.sh
 
 # PLUGINS
