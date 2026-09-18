@@ -33,15 +33,14 @@ source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-cmd-time.sh
 # source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-theme-minimal.sh
 # source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-theme-powerlevel10k.sh
 source ~/myconf/dotfiles/zsh/pluginconfigs/git-prompt.sh  # BLAZING FAST!!
+
+# Mark the tmux with command's exit status ([✓]/[✗])
+source ~/myconf/dotfiles/zsh/pluginconfigs/tmux-exit-flag.zsh
 # fi
 
 source ~/myconf/dotfiles/zsh/bash-alias.sh
 source ~/myconf/dotfiles/zsh/bash-functions.sh
 source ~/myconf/dotfiles/zsh/zsh-envutils.sh
-
-# Mark the tmux window name with the last command's exit status ([✓]/[✗]) when
-# it lands in a window nobody is looking at. Comment out to disable.
-source ~/myconf/dotfiles/zsh/pluginconfigs/tmux-exit-flag.zsh
 
 # alias alias=:  # Avoid override by other installations
 
