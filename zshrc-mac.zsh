@@ -34,7 +34,7 @@ source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-cmd-time.sh
 # source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-theme-powerlevel10k.sh
 source ~/myconf/dotfiles/zsh/pluginconfigs/git-prompt.sh  # BLAZING FAST!!
 
-# Mark the tmux window with what the shell is doing ((⋯)/(✓)/(✗))
+# Mark the tmux window with what the shell is doing ((✓)/(✗))
 source ~/myconf/dotfiles/zsh/pluginconfigs/tmux-exit-flag.zsh
 # fi
 

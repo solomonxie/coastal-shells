@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 # Mark a tmux window's name with what the shell is doing, so a window you
-# aren't watching speaks for itself: name (⋯) running / name (✓) ok /
-# name (✗) failed.
+# aren't watching speaks for itself: name (✓) ok / name (✗) failed.
 #
 #   source tmux-exit-flag.zsh     # .zshrc: install the prompt hooks
 #   tmux-exit-flag.zsh seen @3    # tmux.conf: drop the exit mark once it's looked at
@@ -17,10 +16,7 @@
 if (( ! $# )); then
     _tmux_exit_flag_script=${${(%):-%x}:A}
     if [[ -n $TMUX && -x $_tmux_exit_flag_script ]]; then
-        _tmux_exit_flag_before_command() {
-            _tmux_exit_flag_command_ran=1
-            $_tmux_exit_flag_script run &>/dev/null &!
-        }
+        _tmux_exit_flag_before_command() { _tmux_exit_flag_command_ran=1 }
         _tmux_exit_flag_after_command() {
             local exit_code=$?
             [[ -n $_tmux_exit_flag_command_ran ]] || return
