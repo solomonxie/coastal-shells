@@ -109,7 +109,7 @@ alias gcl="git clone"
 alias work="vim -S .git/work.vim"
 alias lg="lazygit"
 
-alias gitrc="vim ~/.config/git/gitconfig.ini"
+alias gitrc="vim ~/.gitconfig"
 
 
 #######################################################################
