@@ -12,5 +12,11 @@ link() {  # link <path in repo, empty = repo root> <dest>
   echo "linked $dest -> $src"
 }
 
-link "" ~/.config/zsh
-link zshrc-mac.zsh ~/.zshrc
+# install.sh       zsh: the full config at ~/.config/zsh
+# install.sh mini  plain bash (e.g. a Linux server): ~/.bashrc -> bashrc-mini.sh
+if [ "${1:-}" = mini ]; then
+  link bashrc-mini.sh ~/.bashrc
+else
+  link "" ~/.config/zsh
+  link zshrc-mac.zsh ~/.zshrc
+fi
