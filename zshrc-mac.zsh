@@ -84,9 +84,6 @@ setopt incappendhistory
 # export LSCOLORS='BXfxcxdxbxegedabagacad'  # BSD
 export LS_COLORS='di=1;34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'  # LINUX
 
-# REF: https://github.com/oz/tz
-export TZ_LIST="Asia/Shanghai,Beijing-Office;US/Pacific, US-Office"
-
 #######################################################################
 #                    PATH / ENVIRONMENT VARIABLES                     #
 #######################################################################
@@ -110,10 +107,6 @@ export LC_MEASUREMENT=en_US.UTF-8
 export LC_IDENTIFICATION=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-# =========LUA==============
-export LUA_PATH="/opt/homebrew/Cellar/luarocks/3.8.0/share/lua/5.4/?.lua;/opt/homebrew/share/lua/5.4/?.lua;/opt/homebrew/share/lua/5.4/?/init.lua;/opt/homebrew/lib/lua/5.4/?.lua;/opt/homebrew/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;~/.luarocks/share/lua/5.4/?.lua;~/.luarocks/share/lua/5.4/?/init.lua"
-export LUA_CPATH='/opt/homebrew/lib/lua/5.4/?.so;/opt/homebrew/lib/lua/5.4/loadall.so;./?.so;~/.luarocks/lib/lua/5.4/?.so'
-export PATH="$HOME/.luarocks/bin:$PATH"
 # =========LOCALBIN=========
 export PATH="/usr/bin:/usr/local/bin:/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
@@ -125,36 +118,8 @@ export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
-# =====Ruby=====
-# export PATH="$HOME/.rbenv/versions/3.3.0/bin:$PATH"
-# export PATH="$HOME/.asdf/bin:$HOME/.asdf/shims:$PATH"
-# =====PYTHON=====
-export PATH="/usr/local/opt/python@2/bin:$PATH"
-export PATH="$HOME/virtualenv/venv2/bin:$PATH"
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-export PATH="/usr/local/opt/python@3.7/bin:$PATH"
-export PATH="/usr/local/opt/python@3/bin:$PATH"
-export PATH="$HOME/virtualenv/venv/bin:$PATH"
-# export PATH="$HOME/virtualenv/venv3_12/bin:$PATH"
-# =====NODE.JS=====
-export PATH="/usr/local/opt/node@10/bin:$PATH"
-export PATH="$HOME/.nvm/versions/node/v10.17.0/bin:$PATH"
-export PATH="$HOME/virtualnode/venv10/bin:$PATH"
-export PATH="$HOME/virtualnode/venv16/bin:$PATH"
-export PATH="$HOME/virtualnode/venv20/bin:$PATH"
-export PATH="$HOME/virtualnode/venv/bin:$PATH"
-# ======Java============
-# export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk-12.0.1.jdk/Contents/Home"
-# export JAVA_HOME=$(/usr/libexec/java_home)
-# ======Snowflake========
-export PATH="$HOME/Applications/SnowSQL.app/Contents/MacOS:$PATH"
-# =====OTHER-PATH========
-export PATH="$HOME/workspace/bin:$PATH"
 # =====GNU BIN===============
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-# =====GOOGLE CLOUD===============
-export PATH="$HOME/local/share/google-cloud-sdk/bin:$PATH"
-# export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/gcloud/gcp-service-account-serverless-admin-f50d0f01265f.json"
 # ===========Clang=================
 export PATH="/usr/local/opt/openssl@3/bin:$PATH"
 
@@ -182,14 +147,8 @@ export WEZTERM_CONFIG_FILE="${HOME}/.config/wezterm/wezterm.lua"
 # export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 # ^ NOTE: DO NOT ENALBE THESE IN PERSISTENT DOTFILES, WILL CAUSE SOME OTHER BUILDING FAILURES
 
-# =========Neovim==============
-export PATH="$HOME/nvim-macos-0.10.3/bin:$PATH"
-export PATH="$HOME/nvim-macos-0.10/bin:$PATH"
-export PATH="$HOME/nvim-macos-0.9.5/bin:$PATH"  # After nvim 0.10.+, Ctrl-O can't jump back (buffer removed from jumplist) (REF: issues/28968)
-export PATH="$HOME/nvim-macos-0.11.2/bin:$PATH"
-
 # =========OVERRIDES===========
-# Machine-wise overrides
+# Machine-wise overrides: version-pinned runtimes, app paths, prompt tweaks (bash-compatible)
 [ -f ~/.bashrc-local ] || touch ~/.bashrc-local
 source ~/.bashrc-local || true
 # Project-wise overrides
@@ -199,7 +158,3 @@ source ~/.global.env >>/dev/null 2>&1
 # BETTER TO BE AT THE BOTTOM
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh 2>/dev/null  # silences benign "can't change option: zle" from fzf's option save/restore
 # [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh  # will mess up Vim environment
-
-
-# Added by Antigravity CLI installer
-export PATH="$HOME/.local/bin:$PATH"
