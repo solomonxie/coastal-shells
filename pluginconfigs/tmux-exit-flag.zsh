@@ -40,7 +40,6 @@ FAIL_MARK=${ZSH_TMUX_MARK_FAIL:-✗}
 RUN_MARK=${ZSH_TMUX_MARK_RUN:-⋯}
 
 case $1 in
-    run) mark=$RUN_MARK window=$2 ;;
     mark)
         exit_code=$2 window=$3
         (( exit_code == 0 )) && mark=$OK_MARK || mark=$FAIL_MARK

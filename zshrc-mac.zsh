@@ -12,35 +12,35 @@
 #                      IMPORT MODULIZED SETTINGS                      #
 #######################################################################
 # if [[ "$0" =~ "zsh" ]]; then  # >>> PLUGINS >>>
-source ~/myconf/dotfiles/zsh/zsh-performance.sh
-source ~/myconf/dotfiles/zsh/zsh-bindkeys.zsh
-source ~/myconf/dotfiles/zsh/zsh-completion.sh
+source ~/.config/zsh/zsh-performance.sh
+source ~/.config/zsh/zsh-bindkeys.zsh
+source ~/.config/zsh/zsh-completion.sh
 
 # PLUGINS
-source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-syntax-highlighting.sh  # -> 16ms
-source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-autosuggestions.sh  # -> 50ms
-# source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-autocomplete.sh  #1100ms -> SUPER SLOW & UGLY
-source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-cmd-time.sh
+source ~/.config/zsh/pluginconfigs/zsh-syntax-highlighting.sh  # -> 16ms
+source ~/.config/zsh/pluginconfigs/zsh-autosuggestions.sh  # -> 50ms
+# source ~/.config/zsh/pluginconfigs/zsh-autocomplete.sh  #1100ms -> SUPER SLOW & UGLY
+source ~/.config/zsh/pluginconfigs/zsh-cmd-time.sh
 
 # UTILS
-# source ~/myconf/dotfiles/zsh/pluginconfigs/autojump.sh
-# source ~/myconf/dotfiles/zsh/pluginconfigs/broot.sh
+# source ~/.config/zsh/pluginconfigs/autojump.sh
+# source ~/.config/zsh/pluginconfigs/broot.sh
 
 # THEMES
-# source ~/myconf/dotfiles/zsh/ohmyzsh-settings.sh
-# source ~/myconf/dotfiles/zsh/pluginconfigs/pure-zsh.sh
-# source ~/myconf/dotfiles/zsh/pluginconfigs/myminimalist-theme.sh
-# source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-theme-minimal.sh
-# source ~/myconf/dotfiles/zsh/pluginconfigs/zsh-theme-powerlevel10k.sh
-source ~/myconf/dotfiles/zsh/pluginconfigs/git-prompt.sh  # BLAZING FAST!!
+# source ~/.config/zsh/ohmyzsh-settings.sh
+# source ~/.config/zsh/pluginconfigs/pure-zsh.sh
+# source ~/.config/zsh/pluginconfigs/myminimalist-theme.sh
+# source ~/.config/zsh/pluginconfigs/zsh-theme-minimal.sh
+# source ~/.config/zsh/pluginconfigs/zsh-theme-powerlevel10k.sh
+source ~/.config/zsh/pluginconfigs/git-prompt.sh  # BLAZING FAST!!
 
 # Mark the tmux window with what the shell is doing ((✓)/(✗))
-source ~/myconf/dotfiles/zsh/pluginconfigs/tmux-exit-flag.zsh
+source ~/.config/zsh/pluginconfigs/tmux-exit-flag.zsh
 # fi
 
-source ~/myconf/dotfiles/zsh/bash-alias.sh
-source ~/myconf/dotfiles/zsh/bash-functions.sh
-source ~/myconf/dotfiles/zsh/zsh-envutils.sh
+source ~/.config/zsh/bash-alias.sh
+source ~/.config/zsh/bash-functions.sh
+source ~/.config/zsh/zsh-envutils.sh
 
 # alias alias=:  # Avoid override by other installations
 
@@ -203,4 +203,4 @@ source ~/.global.env >>/dev/null 2>&1
 
 
 # Added by Antigravity CLI installer
-export PATH="/Users/solomonxie/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"

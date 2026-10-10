@@ -56,16 +56,16 @@ alias viprofiling="/usr/bin/vim --startuptime /tmp/startup.log +q && vim /tmp/st
 #######################################################################
 #                           CONFIG PROJECTS                           #
 #######################################################################
-alias zshrc="vim ~/myconf/dotfiles/zsh/zshrc-mac.zsh"
-alias vimrc="vim ~/myconf/dotfiles/vim/nvimrc.vim"
-alias tmuxrc="vim ~/myconf/dotfiles/tmux/tmux.conf"
+alias zshrc="vim ~/.config/zsh/zshrc-mac.zsh"
+alias vimrc="vim ~/.config/nvim/nvimrc.vim"
+alias tmuxrc="vim ~/.config/tmux/tmux.conf"
 alias bashrc="vim ~/.bashrc"
 alias rangerrc="vim ~/.config/ranger/rc.conf"
 #alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-# alias muttrc="vim -S ~/myconf/dotfiles/vim/sessions/muttrc.vim"
+# alias muttrc="vim -S ~/.config/nvim/sessions/muttrc.vim"
 alias tigrc="vim ~/.tigrc"
 # alias vimchanges="vim $(git status --porcelain | awk '{print $2}')"
-# alias snippets="vim -S ~/myconf/dotfiles/vim/sessions/snippets.vim "
+# alias snippets="vim -S ~/.config/nvim/sessions/snippets.vim "
 
 
 #######################################################################
@@ -109,7 +109,7 @@ alias gcl="git clone"
 alias work="vim -S .git/work.vim"
 alias lg="lazygit"
 
-alias gitrc="vim ~/myconf/dotfiles/etc/git/gitconfig.ini"
+alias gitrc="vim ~/.config/git/gitconfig.ini"
 
 
 #######################################################################
@@ -148,7 +148,7 @@ if [[ $(uname) == "Darwin" ]]; then
     alias ibrew="arch -x86_64 /usr/local/bin/brew"
 fi
 
-alias keymap="bash $HOME/myconf/dotfiles/etc/macos/remap_external_keyboard_60keys.sh"
+alias keymap="bash $HOME/myconf/os-es/etc/macos/remap_external_keyboard_60keys.sh"
 
 #######################################################################
 #                         CLI TOOLS/COMMANDS                          #
