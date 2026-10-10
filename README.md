@@ -7,8 +7,8 @@ Links the repo to `~/.config/zsh` and `~/.zshrc` to `zshrc-mac.zsh`.
 ## Install
 
 ```sh
-git clone https://github.com/solomonxie/coastal-shells.git ~/myconf/coastal-shells
-~/myconf/coastal-shells/install.sh
+git clone https://github.com/solomonxie/coastal-shells.git ~/.dotfiles/coastal-shells
+~/.dotfiles/coastal-shells/install.sh
 ```
 
-Anything already at a target path is moved to `<path>.bak.<timestamp>`.
+Existing symlinks are replaced; real files at a target path are moved to `<path>.bak.<timestamp>`.
