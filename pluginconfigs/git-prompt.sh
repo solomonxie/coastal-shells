@@ -43,7 +43,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 venvprompt() {
     [ -n "$VIRTUAL_ENV" ] && echo "(${VIRTUAL_ENV:t}) "
 }
-# Off unless set, e.g. from local.zsh
+# Off unless set, e.g. in ~/.bashrc-local
 hostprompt() {
     [ -n "$ZSH_PROMPT_HOST" ] && echo "%F{magenta}${ZSH_PROMPT_HOST}%f "
 }
