@@ -2,3 +2,4 @@
 !.gitignore
 plugins/*
 !plugins/README.md
+local.zsh

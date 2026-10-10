@@ -34,9 +34,7 @@ ZSH_THEME_GIT_PROMPT_TAG="%{$fg_bold[magenta]%}"
 
 _ZSH_FULL_DIR='%'
 _ZSH_CURRENT_DIR='%.'
-# "Solomons-Personal-M1" -> "personal-m1"; override with ZSH_PROMPT_HOST
-_ZSH_HOST=${ZSH_PROMPT_HOST:-${${(L)$(scutil --get LocalHostName 2>/dev/null || hostname -s)}#*s-}}
-_ZSH_COMMAND_PREFIX='$'  # ❯ | $|> | » | >>
+_ZSH_COMMAND_PREFIX='>>'  # ❯ | $|> | » | >>
 
 # venv's own activate script double-parens PS1 (e.g. "((venv) )") on
 # Python 3.12+, since it already wraps VIRTUAL_ENV_PROMPT in parens itself.
@@ -45,8 +43,12 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 venvprompt() {
     [ -n "$VIRTUAL_ENV" ] && echo "(${VIRTUAL_ENV:t}) "
 }
+# Off unless set, e.g. from local.zsh
+hostprompt() {
+    [ -n "$ZSH_PROMPT_HOST" ] && echo "%F{magenta}${ZSH_PROMPT_HOST}%f "
+}
 
 # PROMPT='%B%40<..<%~%b$(gitprompt)'
-PROMPT='%F{yellow}$(venvprompt)%F{magenta}${_ZSH_HOST}%f %{$fg_bold[cyan]%}${_ZSH_CURRENT_DIR}%b%F{white}$(gitprompt) '
+PROMPT='%F{yellow}$(venvprompt)$(hostprompt)%{$fg_bold[cyan]%}${_ZSH_CURRENT_DIR}%b%F{white}$(gitprompt) '
 PROMPT+='%(?.%(!.%F{white}❯%F{yellow}❯%F{red}.%F{green})${_ZSH_COMMAND_PREFIX}%f.%F{red}${_ZSH_COMMAND_PREFIX}%f) '
 RPROMPT=''

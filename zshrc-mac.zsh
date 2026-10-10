@@ -204,3 +204,6 @@ source ~/.global.env >>/dev/null 2>&1
 
 # Added by Antigravity CLI installer
 export PATH="$HOME/.local/bin:$PATH"
+
+# Machine-local, gitignored; last so it overrides everything above
+[ ! -f ~/.config/zsh/local.zsh ] || source ~/.config/zsh/local.zsh
