@@ -12,11 +12,16 @@ link() {  # link <path in repo, empty = repo root> <dest>
   echo "linked $dest -> $src"
 }
 
-# install.sh       zsh: the full config at ~/.config/zsh
-# install.sh mini  plain bash (e.g. a Linux server): ~/.bashrc -> bashrc-mini.sh
-if [ "${1:-}" = mini ]; then
-  link bashrc-mini.sh ~/.bashrc
-else
-  link "" ~/.config/zsh
-  link zshrc-mac.zsh ~/.zshrc
-fi
+# install.sh [zsh]  zsh: ~/.config/zsh -> zsh/, ~/.config/bash -> bash/, ~/.zshrc -> zsh/zshrc-mac.zsh
+# install.sh bash   bash: ~/.config/bash -> bash/, ~/.bashrc -> bash/bashrc.sh
+# install.sh mini   plain bash (e.g. a Linux server): ~/.bashrc -> bash/bashrc-mini.sh
+case "${1:-zsh}" in
+  zsh)
+    link zsh ~/.config/zsh
+    link bash ~/.config/bash
+    link zsh/zshrc-mac.zsh ~/.zshrc
+    ;;
+  bash) link bash ~/.config/bash; link bash/bashrc.sh ~/.bashrc ;;
+  mini) link bash/bashrc-mini.sh ~/.bashrc ;;
+  *) echo "usage: $0 [zsh|bash|mini]" >&2; exit 1 ;;
+esac

@@ -38,8 +38,9 @@ source ~/.config/zsh/pluginconfigs/git-prompt.sh  # BLAZING FAST!!
 source ~/.config/zsh/pluginconfigs/tmux-exit-flag.zsh
 # fi
 
-source ~/.config/zsh/bash-alias.sh
-source ~/.config/zsh/bash-functions.sh
+# Shared with bash
+source ~/.config/bash/bash-alias.sh
+source ~/.config/bash/bash-functions.sh
 source ~/.config/zsh/zsh-envutils.sh
 
 # alias alias=:  # Avoid override by other installations
