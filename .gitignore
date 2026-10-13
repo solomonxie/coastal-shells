@@ -1,4 +1,2 @@
 .*
 !.gitignore
-plugins/*
-!plugins/README.md

@@ -41,7 +41,9 @@ _ZSH_COMMAND_PREFIX='>>'  # ❯ | $|> | » | >>
 # Disable its PS1 edit and show our own single-paren segment instead.
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 venvprompt() {
-    [ -n "$VIRTUAL_ENV" ] && echo "(${VIRTUAL_ENV:t}) "
+    [ -n "$VIRTUAL_ENV" ] && echo -n "(${VIRTUAL_ENV:t}) "
+    # nvm: NVM_BIN=~/.nvm/versions/node/<version>/bin, set by `nvm use`, unset by `nvm deactivate`
+    [ -n "$NVM_BIN" ] && echo -n "(node ${NVM_BIN:h:t}) "
 }
 # Off unless set, e.g. in ~/.bashrc-local
 hostprompt() {

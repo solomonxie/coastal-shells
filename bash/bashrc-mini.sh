@@ -40,7 +40,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # Python
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/virtualenv/venv2/bin:$PATH"
 export PATH="$HOME/virtualenv/venv/bin:$PATH"
 
 #######################################################################

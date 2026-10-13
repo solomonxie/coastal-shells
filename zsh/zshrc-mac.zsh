@@ -34,7 +34,7 @@ source ~/.config/zsh/pluginconfigs/zsh-cmd-time.sh
 # source ~/.config/zsh/pluginconfigs/zsh-theme-powerlevel10k.sh
 source ~/.config/zsh/pluginconfigs/git-prompt.sh  # BLAZING FAST!!
 
-# Mark the tmux window with what the shell is doing ((✓)/(✗))
+# Mark the tmux window with how its last command ended ((✓)/(✗))
 source ~/.config/zsh/pluginconfigs/tmux-exit-flag.zsh
 # fi
 

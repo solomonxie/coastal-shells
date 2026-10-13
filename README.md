@@ -7,15 +7,17 @@ Zsh config with no framework: hand-picked plugins, a fast git prompt, aliases an
 - `fish/`: not set up yet.
 
 Machine-local overrides go in `~/.bashrc-local` (bash-compatible, sourced near the end), e.g. `ZSH_PROMPT_HOST=work` or `_ZSH_COMMAND_PREFIX='$'`.
+`~/.bashrc-local` can be a symlink into a private dotfiles repo, so this repo stays public.
 
 ## Install
 
 ```sh
-git clone https://github.com/solomonxie/shells-on-shells.git ~/workspace/shells-on-shells
-~/workspace/shells-on-shells/install.sh  # [zsh|bash|mini], default zsh
+git clone https://github.com/solomonxie/shells-on-shells.git ~/.config/shells-on-shells
+~/.config/shells-on-shells/install.sh  # [zsh|bash|mini], default zsh
 ```
 
 Existing symlinks are replaced; real files at a target path are moved to `<path>.bak.<timestamp>`.
+Plugins are cloned into `~/.zsh_plugins` on first start.
 
 ## Mini
 

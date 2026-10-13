@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
-# Mark a tmux window's name with what the shell is doing, so a window you
+# Mark a tmux window's name with how its last command ended, so a window you
 # aren't watching speaks for itself: name (✓) ok / name (✗) failed.
 #
 #   source tmux-exit-flag.zsh     # .zshrc: install the prompt hooks
-#   tmux-exit-flag.zsh seen @3    # tmux.conf: drop the exit mark once it's looked at
-#   tmux-exit-flag.zsh clear @3   # drop every mark, running one included
+#   tmux-exit-flag.zsh seen @3    # tmux.conf: drop the mark once it's looked at
+#   tmux-exit-flag.zsh clear @3   # same, from anywhere
 #   tmux-exit-flag.zsh clear-all  # escape hatch, if a mark ever gets stranded
 #
 # Best-effort by design: every failure path is silent.
@@ -16,7 +16,13 @@
 if (( ! $# )); then
     _tmux_exit_flag_script=${${(%):-%x}:A}
     if [[ -n $TMUX && -x $_tmux_exit_flag_script ]]; then
-        _tmux_exit_flag_before_command() { _tmux_exit_flag_command_ran=1 }
+        # Agent CLIs run for the whole session and track their own state.
+        (( ${+ZSH_TMUX_MARK_IGNORE} )) || ZSH_TMUX_MARK_IGNORE=(claude codex)
+        _tmux_exit_flag_before_command() {
+            # $2 is the command line with aliases expanded.
+            (( ${ZSH_TMUX_MARK_IGNORE[(Ie)${${(z)2}[1]:t}]} )) && return
+            _tmux_exit_flag_command_ran=1
+        }
         _tmux_exit_flag_after_command() {
             local exit_code=$?
             [[ -n $_tmux_exit_flag_command_ran ]] || return
@@ -37,7 +43,6 @@ fi
 # --------------------------------------------------------------- executed --
 OK_MARK=${ZSH_TMUX_MARK_OK:-✓}
 FAIL_MARK=${ZSH_TMUX_MARK_FAIL:-✗}
-RUN_MARK=${ZSH_TMUX_MARK_RUN:-⋯}
 
 case $1 in
     mark)
@@ -70,21 +75,16 @@ user_is_watching() {
 # baked in permanently.
 strip_mark() {
     local name=${1%" ($OK_MARK)"}
-    name=${name%" ($FAIL_MARK)"}
-    print -rn -- ${name%" ($RUN_MARK)"}
+    print -rn -- ${name%" ($FAIL_MARK)"}
 }
 
 mark_window() {
     local original_name=$(window_option @exit_flag_original_name)
     local current_name=$(window_name)
     [[ -n $current_name ]] || return
-    # Claude Code owns this window's name right now; don't fight over it.
-    [[ -n $(window_option @claude_flag_original_name) ]] && return
-    # An exit mark on a window you are already watching would say nothing you
-    # can't see, and no focus change would ever come along to unflag it -- so
-    # it also has to take down the running mark the command left. Running is
-    # state rather than a request, so it goes up either way.
-    if [[ $mark != $RUN_MARK ]] && user_is_watching; then
+    # A mark on a window you are already watching would say nothing you can't
+    # see, and no focus change would ever come along to unflag it.
+    if user_is_watching; then
         unmark_window
         return
     fi
@@ -100,19 +100,21 @@ mark_window() {
     tmux_quiet rename-window -t $window "${original_name} (${mark})"
 }
 
-# $1 = keep-run: leave a running window marked. Looking at a window answers the
-# exit mark, but it doesn't finish the command.
 unmark_window() {
     local original_name=$(window_option @exit_flag_original_name)
     [[ -n $original_name ]] || return
     local current_name=$(window_name)
-    [[ $1 == keep-run && $current_name == "${original_name} (${RUN_MARK})" ]] && return
     # Only take the name back if it's still ours; a window renamed since we
     # marked it belongs to whoever renamed it.
     if [[ $(strip_mark $current_name) == $original_name ]]; then
         tmux_quiet rename-window -t $window $original_name
-        [[ $(window_option @exit_flag_auto_rename) == off ]] ||
-            tmux_quiet set-option -w -t $window automatic-rename on
+        # Put automatic-rename back exactly as it was. rename-window just set it
+        # off on the window; empty means it was inherited, so unset to inherit
+        # again -- forcing it on would override a global `off`.
+        case $(window_option @exit_flag_auto_rename) in
+            on) tmux_quiet set-option -w -t $window automatic-rename on ;;
+            '') tmux_quiet set-option -wu -t $window automatic-rename ;;
+        esac
     fi
     forget_original_name
 }
@@ -129,8 +131,7 @@ fi
 [[ $window == @<->* ]] || exit 0
 
 case $1 in
-    seen) unmark_window keep-run ;;
-    clear) unmark_window ;;
+    seen | clear) unmark_window ;;
     *) mark_window ;;
 esac
 exit 0

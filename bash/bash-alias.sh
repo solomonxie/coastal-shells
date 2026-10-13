@@ -122,7 +122,6 @@ alias gitbook='docker run -it --name gitbook --rm -v "$PWD":/gitbook -p 4000:400
 #######################################################################
 #                               PYTHON                                #
 #######################################################################
-alias ju="~/virtualenv/conda/bin/jupyter notebook"
 alias ipy="ipython"
 alias py="PYTHONPATH=. python"
 alias pt="PYTHONPATH=. pytest -svra"
