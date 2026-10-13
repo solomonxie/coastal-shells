@@ -1,4 +1,4 @@
-# coastal-shells
+# shells-on-shells
 
 Zsh config with no framework: hand-picked plugins, a fast git prompt, aliases and functions, plus tmux window marks for finished commands, `(✓)` or `(✗)`.
 
@@ -7,7 +7,7 @@ Lives in `~/.config/zsh`; `install.sh` links `~/.zshrc` to `zshrc-mac.zsh`. Mach
 ## Install
 
 ```sh
-git clone https://github.com/solomonxie/coastal-shells.git ~/.config/zsh
+git clone https://github.com/solomonxie/shells-on-shells.git ~/.config/zsh
 ~/.config/zsh/install.sh
 ```
 
@@ -18,6 +18,6 @@ Existing symlinks are replaced; real files at a target path are moved to `<path>
 `bashrc-mini.sh` is a self-contained `~/.bashrc` for plain bash (Linux servers, Raspberry Pi): history, prompt, aliases, no plugins. Sources `~/.bashrc-local` if present.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/solomonxie/coastal-shells/master/bashrc-mini.sh -o ~/.bashrc
+curl -fsSL https://raw.githubusercontent.com/solomonxie/shells-on-shells/master/bashrc-mini.sh -o ~/.bashrc
 # or, with the repo cloned: ~/.config/zsh/install.sh mini
 ```
